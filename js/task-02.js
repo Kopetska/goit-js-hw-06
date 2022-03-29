@@ -6,37 +6,12 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
-
-const firstItem = document.createElement("li");
-firstItem.classList.add("item");
-firstItem.textContent = "Potatoes";
-
-const secondItem = document.createElement("li");
-secondItem.classList.add("item");
-secondItem.textContent = "Mushrooms";
-
-const thirdItem = document.createElement("li");
-thirdItem.classList.add("item");
-thirdItem.textContent = "Garlic";
-
-const fifthItem = document.createElement("li");
-fifthItem.classList.add("item");
-fifthItem.textContent = "Tomatos";
-
-const sixthItem = document.createElement("li");
-sixthItem.classList.add("item");
-sixthItem.textContent = "Herbs";
-
-const seventhItem = document.createElement("li");
-seventhItem.classList.add("item");
-seventhItem.textContent = "Condiments";
-
-const total = document.querySelector("ul");
-total.append(
-  fifthItem,
-  secondItem,
-  thirdItem,
-  fifthItem,
-  sixthItem,
-  seventhItem
-);
+const ul = document.querySelector('[id="ingredients"]');
+const fragment = document.createDocumentFragment();
+ingredients.forEach(function (ingredient) {
+  const li = document.createElement("li");
+  li.classList.add("item");
+  li.textContent = ingredient;
+  fragment.appendChild(li);
+});
+ul.appendChild(fragment);

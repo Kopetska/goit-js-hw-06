@@ -1,12 +1,21 @@
-const categoryTotal = document.querySelectorAll(".item");
-console.log(`Number of categories: ${categoryTotal.length}`);
-
-const categoryTitle = document.querySelectorAll("h2");
-console.log(`Category: ${categoryTitle[0].textContent}`);
-
-const elementsFirst = document.querySelector("h2").nextElementSibling.children;
-console.log(`Elements: ${elementsFirst.length}`);
-console.log(`Category: ${categoryTitle[1].textContent}`);
-console.log(`Elements: ${categoryTitle[1].nextElementSibling.children.length}`);
-console.log(`Category: ${categoryTitle[2].textContent}`);
-console.log(`Elements: ${categoryTitle[2].nextElementSibling.children.length}`);
+const items = document.querySelectorAll(".item");
+console.log(`Number of categories: ${items.length}`);
+const categories = document.querySelector('[id="categories"]');
+console.log(
+  `Category: ${categories.firstChild.nextElementSibling.children[0].textContent}`
+);
+console.log(
+  `Elements: ${categories.firstElementChild.childNodes[3].children.length}`
+);
+console.log(
+  `Category: ${categories.childNodes[3].firstElementChild.textContent}`
+);
+console.log(
+  `Elements: ${categories.childNodes[3].children[1].children.length}`
+);
+console.log(
+  `Category: ${categories.childNodes[5].firstElementChild.textContent}`
+);
+console.log(
+  `Elements: ${categories.childNodes[5].children[1].children.length}`
+);
